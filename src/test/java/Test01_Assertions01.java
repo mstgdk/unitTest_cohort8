@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Test01_Assertions01 {
@@ -42,6 +44,32 @@ public class Test01_Assertions01 {
         int b = 16;
 
         assertFalse(a>b);
+    }
+    //-------------- 13.05.2025
+    @Test
+    void testNull(){
+        String userName=null;
+        assertNull(userName,"test başarısız");
+    }
+    @Test
+    void testObjects(){
+        String a = "hello";
+        String b = "hello";
+        String c = new String("hello");
+        String d = new String("hello");
+
+        //assertSame(d,c);
+        assertNotSame(c,d);
+    }
+    @Test
+    void testArrays(){
+        String str = "Junit patika dev";
+        String[] actualArray = str.split(" ");
+        String[] expectedArray = {"Junit","patika","dev"};
+
+        //assertTrue(Arrays.equals(actualArray,expectedArray));
+        assertArrayEquals(actualArray, expectedArray);
+
     }
 
 }
